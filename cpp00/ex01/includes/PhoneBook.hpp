@@ -12,6 +12,7 @@ public:
 	~PhoneBook(void);
 
 	void	displayContacts(void) const;
+	void	displayEntry(int index) const;
 	void	addContact(void);
 };
 
