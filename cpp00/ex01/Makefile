@@ -2,7 +2,8 @@
 NAME	= phonebook
 
 #COMMANDS#
-CC		= c++ -Wall -Werror -Wextra -std=c++98 -fsanitize=address -g3
+CC		= c++ -Wall -Werror -Wextra -std=c++98 -pedantic
+FSAN	= -fsanitize=address -g3
 INC		= -Iincludes/
 RM		= rm -rf
 
