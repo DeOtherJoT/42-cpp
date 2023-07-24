@@ -23,7 +23,7 @@ Fixed::Fixed(const int given_val) {
 
 Fixed::Fixed(const float given_val) {
 	std::cout << "Float constructor called" << '\n';
-	this->_fn_value = std::roundf(given_val * (1 << this->_fract_bits));
+	this->_fn_value = roundf(given_val * (1 << this->_fract_bits));
 }
 
 Fixed::~Fixed(void) {
