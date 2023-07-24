@@ -23,10 +23,13 @@ ClapTrap::~ClapTrap(void) {
 }
 
 /* Operator Overload */
-// ClapTrap	&ClapTrap::operator = (const ClapTrap &a) {
-// 	std::cout << "Copy assignment operator called" << '\n';
-// 	this->_name = 
-// }
+ClapTrap	&ClapTrap::operator = (const ClapTrap &a) {
+	std::cout << "Copy assignment operator called" << '\n';
+	this->_name = a.getName();
+	this->_hp = a.getHitPoints();
+	this->_ep = a.getEnergyPoints();
+	this->_attack_dmg = a.getAttackDmg();
+}
 
 
 /* Member Functions */
