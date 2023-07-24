@@ -1,6 +1,7 @@
 #include "../includes/Fixed.hpp"
 
 /* Constructor and Destructor */
+
 Fixed::Fixed(void) {
 	std::cout << "Default constructor called" << '\n';
 	this->_fn_value = 0;
@@ -26,6 +27,7 @@ Fixed::~Fixed(void) {
 }
 
 /* Operator Overloads */
+
 Fixed &Fixed::operator = (const Fixed &a) {
 	std::cout << "Copy assignment operator called" << '\n';
 	this->_fn_value = a.getRawBits();
@@ -57,6 +59,7 @@ bool Fixed::operator != (const Fixed &a) {
 }
 
 /* Arithmetic Overloads */
+
 Fixed Fixed::operator + (const Fixed &a) {
 	return (this->toFloat() + a.toFloat());
 }
@@ -73,7 +76,30 @@ Fixed Fixed::operator / (const Fixed &a) {
 	return (this->toFloat() / a.toFloat());
 }
 
+Fixed &Fixed::operator ++ () {
+	++(this->_fn_value);
+	return (*this);
+}
+
+Fixed Fixed::operator ++ (int) {
+	Fixed	temp(*this);
+	++(this->_fn_value);
+	return (temp);
+}
+
+Fixed &Fixed::operator -- () {
+	--(this->_fn_value);
+	return (*this);
+}
+
+Fixed Fixed::operator -- (int) {
+	Fixed	temp(*this);
+	--(this->_fn_value);
+	return (temp);
+}
+
 /* Member Functions */
+
 int	Fixed::getRawBits(void) const {
 	std::cout << "getRawBits member function called" << '\n';
 	return (this->_fn_value);
@@ -92,7 +118,32 @@ int	Fixed::toInt(void) const {
 	return (this->_fn_value >> this->_fract_bits);
 }
 
+Fixed	&Fixed::min(Fixed &num1, Fixed &num2) {
+	if (num1.toFloat() <= num2.toFloat())
+		return (num1);
+	return (num2);
+}
+
+const Fixed	&Fixed::min(const Fixed &num1, const Fixed &num2) {
+	if (num1.toFloat() <= num2.toFloat())
+		return (num1);
+	return (num2);
+}
+
+Fixed	&Fixed::max(Fixed &num1, Fixed &num2) {
+	if (num1.toFloat() >= num2.toFloat())
+		return (num1);
+	return (num2);
+}
+
+const Fixed	&Fixed::max(const Fixed &num1, const Fixed &num2) {
+	if (num1.toFloat() >= num2.toFloat())
+		return (num1);
+	return (num2);
+}
+
 /* Normal Functions */
+
 std::ostream &operator << (std::ostream &out, const Fixed &a) {
 	out << a.toFloat();
 	return (out);

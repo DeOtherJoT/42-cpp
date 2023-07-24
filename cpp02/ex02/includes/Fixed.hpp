@@ -31,16 +31,21 @@ public:
 	Fixed operator * (const Fixed &a);
 	Fixed operator / (const Fixed &a);
 
+	Fixed &operator ++ ();
+	Fixed operator ++ (int);
+	Fixed &operator -- ();
+	Fixed operator -- (int);
+
 	/* Member Functions */
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
 	float	toFloat(void) const;
 	int		toInt(void) const;
 
-	Fixed	&min(Fixed &num1, Fixed &num2);
-	Fixed	&min(const Fixed &num1, const Fixed &num2);
-	Fixed	&max(Fixed &num1, Fixed &num2);
-	Fixed	&max(const Fixed &num1, const Fixed &num2);
+	static Fixed		&min(Fixed &num1, Fixed &num2);
+	static const Fixed	&min(const Fixed &num1, const Fixed &num2);
+	static Fixed		&max(Fixed &num1, Fixed &num2);
+	static const Fixed	&max(const Fixed &num1, const Fixed &num2);
 };
 
 /* Normal Functions */
