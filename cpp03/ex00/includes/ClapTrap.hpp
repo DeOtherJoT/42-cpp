@@ -29,6 +29,9 @@ public:
 	int			getHitPoints(void) const;
 	int			getEnergyPoints(void) const;
 	int			getAttackDmg(void) const;
+
+	/* Setter Methods */
+	void	setName(std::string new_name);
 };
 
 #endif

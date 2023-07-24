@@ -29,6 +29,7 @@ ClapTrap	&ClapTrap::operator = (const ClapTrap &a) {
 	this->_hp = a.getHitPoints();
 	this->_ep = a.getEnergyPoints();
 	this->_attack_dmg = a.getAttackDmg();
+	return (*this);
 }
 
 
@@ -53,13 +54,13 @@ void	ClapTrap::takeDamage(unsigned int amount) {
 		return ;
 	}
 	std::cout << "ClapTrap " << this->_name << " has taken " << amount << " damage!" << '\n';
-	if (amount >= this->_hp) {
+	if (amount >= (unsigned int)this->_hp) {
 		std::cout << "ClapTrap " << this->_name << " has died!" << '\n';
 		this->_hp = 0;
 	}
 	else {
 		this->_hp -= amount;
-		std::cout << "ClapTrap " << this->_name << " has " << this->_hp << " hit points left.";
+		std::cout << "ClapTrap " << this->_name << " has " << this->_hp << " hit points left." << '\n';
 	}
 }
 
@@ -74,7 +75,7 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 	else {
 		std::cout << "ClapTrap " << this->_name << " has been repaired by " << amount << " hit points!" << '\n';
 		this->_hp += amount;
-		std::cout << "ClapTrap " << this->_name << " now has " << this->_hp << "hit points"; 
+		std::cout << "ClapTrap " << this->_name << " now has " << this->_hp << " hit points." << '\n'; 
 	}
 }
 
@@ -93,4 +94,10 @@ int	ClapTrap::getEnergyPoints(void) const {
 
 int	ClapTrap::getAttackDmg(void) const {
 	return (this->_attack_dmg);
+}
+
+/* Setter Methods */
+void	ClapTrap::setName(std::string new_name) {
+	std::cout << "ClapTrap " << this->_name << " is renamed to " << new_name << '\n';
+	this->_name = new_name;
 }
