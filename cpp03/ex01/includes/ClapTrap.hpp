@@ -11,7 +11,6 @@ protected:
 	int			_attack_dmg;
 public:
 	/* Constructors and Destructor */
-	ClapTrap(void);
 	ClapTrap(std::string given_name);
 	ClapTrap(const ClapTrap &src);
 	~ClapTrap(void);

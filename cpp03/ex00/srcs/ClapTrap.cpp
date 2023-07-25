@@ -1,11 +1,6 @@
 #include "../includes/ClapTrap.hpp"
 
 /* Constructors and Destructor */
-ClapTrap::ClapTrap(void)
-	: _name(0), _hp(10), _ep(10), _attack_dmg(0)
-{
-	std::cout << "[Default constructor] ClapTrap unit with no name has spawned!" << '\n';
-}
 
 ClapTrap::ClapTrap(std::string given_name)
 	: _name(given_name), _hp(10), _ep(10), _attack_dmg(0)

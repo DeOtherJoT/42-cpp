@@ -1,14 +1,6 @@
 #include "../includes/ScavTrap.hpp"
 
 /* Constructors and Destructor */
-
-ScavTrap::ScavTrap(void) : ClapTrap() {
-	this->_hp = 100;
-	this->_ep = 50;
-	this->_attack_dmg = 20;
-	std::cout << "[Default Constructor] ScavTrap unit with no name has spawned" << '\n';
-}
-
 ScavTrap::ScavTrap(std::string given_name) : ClapTrap(given_name) {
 	this->_hp = 100;
 	this->_ep = 50;
