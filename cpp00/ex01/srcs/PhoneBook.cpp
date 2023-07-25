@@ -11,6 +11,7 @@ PhoneBook::~PhoneBook(void) {
 void PhoneBook::displayContacts(void) const {
 	int	i = 0;
 	
+	std::cout << "     INDEX|    F_NAME|    L_NAME|    N_NAME" << '\n';
 	while ((i < this->total_contacts) && (i < 8)) {
 		this->contact_list[i].displayContact(i);
 		i++;

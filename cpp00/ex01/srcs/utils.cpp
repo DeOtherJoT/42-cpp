@@ -12,20 +12,11 @@ void	printCol(STRING str)
 	}
 }
 
-// void	printFilledLine(int index, Contact &elem)
-// {
-// 	printCol(std::to_string(index));
-// 	std::cout << "|";
-// 	printCol(elem.first_name);
-// 	std::cout << "|";
-// 	printCol(elem.last_name);
-// 	std::cout << "|";
-// 	printCol(elem.nickname);
-// 	std::cout << "\n";
-// }
-
 void	printEmptyLine(int index) {
-	printCol(std::to_string(index));
+	std::string temp = "0";
+
+	temp[0] += index;
+	printCol(temp);
 	for (int i = 0; i < 3; i++)
 		std::cout << "|          ";
 	std::cout << "\n";
@@ -46,6 +37,14 @@ STRING	getField(STRING prompt) {
 	return (ret);
 }
 
+int	getNumber(STRING temp) {
+	if (temp.size() != 1) return (-1);
+	if (temp[0] >= '0' && temp[0] <= '7') {
+		return (temp[0] -= '0');
+	}
+	return (-1);
+}
+
 int	getValidIndex(int total_contacts) {
 	int		ret;
 	STRING	temp;
@@ -53,13 +52,7 @@ int	getValidIndex(int total_contacts) {
 	while (1) {
 		std::cout << "Query contact list at index : ";
 		std::getline(std::cin, temp);
-		try {
-			ret = std::stoi(temp);
-		}
-		catch (std::invalid_argument) {
-			std::cout << "Invalid input, please input a number." << '\n';
-			continue ;
-		}
+		ret = getNumber(temp);
 		if (ret < 0 || ret >= 8 || ret >= total_contacts)
 			std::cout << "Not a valid index, please try again." << "\n";
 		else
