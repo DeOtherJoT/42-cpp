@@ -3,7 +3,7 @@ NAME		= megaphone
 CC			= c++
 CC_FLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRCS		= megaphone.cpp
+SRCS		= srcs/megaphone.cpp
 
 all	:	${NAME}
 
@@ -13,6 +13,8 @@ ${NAME}	:
 clean	:
 	rm ${NAME}
 
-re		: clean all
+fclean	: clean
 
-.PHONY	: clean re megaphone
+re		: fclean all
+
+.PHONY	: all clean fclean re
