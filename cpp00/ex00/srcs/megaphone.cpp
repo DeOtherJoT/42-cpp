@@ -1,18 +1,20 @@
 #include <iostream>
-#include <cstring>
-#include <cstdio>
 
-int	main(int argc, char **argv)
-{
+int	main(int argc, char **argv) {
 	if (argc == 1) {
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << '\n';
+		return (0);
 	}
-	else {
-		for (int x = 1; x < argc; x++) {
-			for (size_t y = 0; y < strlen(argv[x]); y++) {
-				putchar(toupper(argv[x][y]));
+	for (int x = 1; x < argc; x++) {
+		int	y = 0;
+
+		while (argv[x][y]) {
+			if (argv[x][y] >= 'a' && argv[x][y] <= 'z') {
+				argv[x][y] -= 32;
 			}
+			y++;
 		}
+		std::cout << argv[x];
 	}
-	std::cout << "\n";
+	std::cout << '\n';
 }
