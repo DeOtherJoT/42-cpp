@@ -1,6 +1,6 @@
 #include "../includes/main.hpp"
 
-void	printCol(STRING str)
+void	printCol(std::string str)
 {
 	if (str.size() < 10) {
 		for (size_t i = 0; (i + str.size()) < 10; i++)
@@ -22,8 +22,8 @@ void	printEmptyLine(int index) {
 	std::cout << "\n";
 }
 
-STRING	getField(STRING prompt) {
-	STRING ret;
+std::string	getField(std::string prompt) {
+	std::string ret;
 
 	while (1)
 	{
@@ -37,7 +37,7 @@ STRING	getField(STRING prompt) {
 	return (ret);
 }
 
-int	getNumber(STRING temp) {
+int	getNumber(std::string temp) {
 	if (temp.size() != 1) return (-1);
 	if (temp[0] >= '0' && temp[0] <= '7') {
 		return (temp[0] -= '0');
@@ -47,7 +47,7 @@ int	getNumber(STRING temp) {
 
 int	getValidIndex(int total_contacts) {
 	int		ret;
-	STRING	temp;
+	std::string	temp;
 
 	while (1) {
 		std::cout << "Query contact list at index : ";
