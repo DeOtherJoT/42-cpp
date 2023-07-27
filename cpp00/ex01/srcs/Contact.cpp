@@ -1,4 +1,3 @@
-#include <iostream>
 #include "../includes/Contact.hpp"
 
 Contact::Contact()
@@ -15,11 +14,14 @@ void	Contact::setContact(std::string n_fn, std::string n_ln, std::string n_nn, s
 	this->l_name = n_ln;
 	this->n_name = n_nn;
 	this->p_num = n_pn;
-	this->d_sec = n_ds;	
+	this->d_sec = n_ds;
 }
 
 std::string	Contact::getFirstName(int mode) const {
-	
+	if (mode == 0 || this->f_name.length() == 10)
+		return (this->f_name);
+	else 
+		return (this->f_name.substr(0, 9) + ".");
 }
 
 void	Contact::displayRow(void) const {
