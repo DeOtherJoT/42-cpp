@@ -4,6 +4,7 @@
 #define STRING std::string
 
 #include <iostream>
+#include <iomanip>
 
 class Contact {
 private:
@@ -25,7 +26,7 @@ public:
 	STRING	getPhoneNum(void) const;
 	STRING	getDarkestSecret(void) const;
 
-	void		displayRow(void) const;
+	void		displayRow(int index) const;
 	void		displayDetails(void) const;
 };
 

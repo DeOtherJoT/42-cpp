@@ -9,8 +9,7 @@ RM		= rm -rf
 
 #PATHS#
 SRC_DIR	= srcs/
-SRCS	= $(addprefix $(SRC_DIR), Contact.cpp PhoneBook.cpp utils.cpp)
-MAIN	= $(SRC_DIR)main.cpp
+SRCS	= $(addprefix $(SRC_DIR), main.cpp Contact.cpp PhoneBook.cpp utils.cpp)
 OBJS	= $(SRCS:.cpp=.o)
 
 #RECIPES#
@@ -20,7 +19,7 @@ all	:	$(NAME)
 	$(CC) $(INC) -c $< -o $@
 
 $(NAME)	:	$(OBJS)
-	$(CC) $(INC) -o $(NAME) $(MAIN) $(OBJS)
+	$(CC) $(INC) -o $(NAME) $(OBJS)
 
 clean	:
 	$(RM) $(OBJS)
