@@ -1,27 +1,29 @@
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
+#define STRING std::string
+
 #include <iostream>
 
 class Contact {
 private:
-	std::string	f_name;
-	std::string	l_name;
-	std::string	n_name;
-	std::string	p_num;
-	std::string	d_sec;
+	STRING	f_name;
+	STRING	l_name;
+	STRING	n_name;
+	STRING	p_num;
+	STRING	d_sec;
 
 public:
 	Contact();
 	~Contact();
 
-	void		setContact(std::string n_fn, std::string n_ln, std::string n_nn, std::string n_pn, std::string n_ds);
+	void		setContact(STRING const &n_fn, STRING const &n_ln, STRING const &n_nn, STRING const &n_pn, STRING const &n_ds);
 
-	std::string	getFirstName(int mode) const;
-	std::string	getLastName(int mode) const;
-	std::string	getNickName(int mode) const;
-	std::string	getPhoneNum(int mode) const;
-	std::string	getDarkestSecret(int mode) const;
+	STRING	getFirstName(int mode) const;
+	STRING	getLastName(int mode) const;
+	STRING	getNickName(int mode) const;
+	STRING	getPhoneNum(void) const;
+	STRING	getDarkestSecret(void) const;
 
 	void		displayRow(void) const;
 	void		displayDetails(void) const;

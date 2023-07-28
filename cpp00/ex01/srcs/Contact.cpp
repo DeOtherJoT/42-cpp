@@ -9,7 +9,7 @@ Contact::~Contact() {
 	std::cout << "Contact destructor called" << '\n';
 }
 
-void	Contact::setContact(std::string n_fn, std::string n_ln, std::string n_nn, std::string n_pn, std::string n_ds) {
+void	Contact::setContact(STRING const &n_fn, STRING const &n_ln, STRING const &n_nn, STRING const &n_pn, STRING const &n_ds) {
 	this->f_name = n_fn;
 	this->l_name = n_ln;
 	this->n_name = n_nn;
@@ -17,15 +17,36 @@ void	Contact::setContact(std::string n_fn, std::string n_ln, std::string n_nn, s
 	this->d_sec = n_ds;
 }
 
-std::string	Contact::getFirstName(int mode) const {
+STRING	Contact::getFirstName(int mode) const {
 	if (mode == 0 || this->f_name.length() == 10)
 		return (this->f_name);
 	else 
 		return (this->f_name.substr(0, 9) + ".");
 }
 
+STRING	Contact::getLastName(int mode) const {
+	if (mode == 0 || this->l_name.length() == 10)
+		return (this->l_name);
+	else 
+		return (this->l_name.substr(0, 9) + ".");
+}
+
+STRING	Contact::getNickName(int mode) const {
+	if (mode == 0 || this->n_name.length() == 10)
+		return (this->n_name);
+	else 
+		return (this->n_name.substr(0, 9) + ".");
+}
+
+STRING	Contact::getPhoneNum(void) const {
+	return (this->p_num);
+}
+
+STRING	Contact::getDarkestSecret(void) const {
+	return (this->d_sec);
+}
+
 void	Contact::displayRow(void) const {
-	
 }
 
 void	Contact::displayDetails(void) const {
