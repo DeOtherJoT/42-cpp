@@ -10,7 +10,7 @@ int	main(int argc, char **argv) {
 
 		while (argv[x][y]) {
 			if (argv[x][y] >= 'a' && argv[x][y] <= 'z') {
-				argv[x][y] -= 32;
+				argv[x][y] = std::toupper(argv[x][y]);
 			}
 			y++;
 		}

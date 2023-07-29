@@ -4,8 +4,8 @@
 #include <iostream>
 #include "PhoneBook.hpp"
 
-std::string	getField(const std::string &prompt);
-void		printEmptyRow(int index);
-int			getValidIndex(int total_contacts);
+STRING	getField(const STRING &prompt);
+void	printEmptyRow(int index);
+int		getValidIndex(int total_contacts);
 
 #endif
