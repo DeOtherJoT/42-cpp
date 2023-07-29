@@ -4,6 +4,11 @@
 #include "iostream"
 #include "Weapon.hpp"
 
+/**
+ * @brief Cannot use a reference because HumanB may not have a weapon.
+ * 
+ */
+
 class HumanB {
 private:
 	std::string	_name;
@@ -11,7 +16,7 @@ private:
 
 public:
 	HumanB(void);
-	HumanB(std::string given_name);
+	HumanB(const std::string &given_name);
 	~HumanB(void);
 
 	void	attack(void);

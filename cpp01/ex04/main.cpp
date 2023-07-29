@@ -2,12 +2,12 @@
 #include <string>
 #include <fstream>
 
-int	err_msg(std::string err_msg) {
+int	err_msg(const std::string &err_msg) {
 	std::cout << err_msg << std::endl;
 	return (1);
 }
 
-void	replace_str(const char *file, std::string str1, std::string substr) {
+void	replace_str(const char *file, const std::string &str1, const std::string &substr) {
 	std::ifstream			infile;
 	std::ofstream			outfile;
 	std::string				data;
@@ -58,4 +58,6 @@ int	main(int argc, char **argv) {
 
 	/* Start replacement */
 	replace_str(argv[1], std::string(argv[2]), std::string(argv[3]));
+
+	// system("leaks sed");
 }

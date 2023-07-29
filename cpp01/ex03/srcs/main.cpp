@@ -12,6 +12,7 @@ int	main(void)
 		w_club.setType("some other type of club");
 		bob.attack();
 	}
+	std::cout << std::endl;
 	{
 		Weapon	w_club = Weapon("crude spiked club");
 
@@ -21,5 +22,6 @@ int	main(void)
 		w_club.setType("some other type of club");
 		jim.attack();
 	}
+	// system("leaks fight");
 	return (0);
 }

@@ -4,7 +4,7 @@ NAME	= zombie_horde
 
 # COMMANDS #
 
-CC		= c++ -Wall -Wextra -Werror -std=c++98 -pedantic
+CC		= c++ -Wall -Wextra -Werror -std=c++98
 INC		= -Iincludes/
 FSAN	= fsanitize=address -g3
 RM		= rm -rf

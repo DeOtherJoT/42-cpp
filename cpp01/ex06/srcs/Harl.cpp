@@ -24,6 +24,27 @@ void	Harl::error(void) {
 	std::cout << "[ERROR]\nThis is unacceptable! I want to speak to the manager now." << '\n';
 }
 
+// void	Harl::complain(std::string level) {
+// 	static std::string	lvl_list[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+// 	static void			(Harl::*funct_ptr[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+// 	int					start = -1;
+
+// 	for (int i = 0; i < 4; i++) {
+// 		if (level.compare(lvl_list[i]) == 0) {
+// 			start = i;
+// 			break ;
+// 		}
+// 	}
+// 	if (start == -1) {
+// 		std::cout << "[ Probably complaining about insignificant problems ]" << '\n';
+// 		return ;
+// 	}
+// 	while (start < 4) {
+// 		(this->*funct_ptr[start])();
+// 		start++;
+// 	}
+// }
+
 void	Harl::complain(std::string level) {
 	static std::string	lvl_list[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	static void			(Harl::*funct_ptr[])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
@@ -35,12 +56,23 @@ void	Harl::complain(std::string level) {
 			break ;
 		}
 	}
-	if (start == -1) {
-		std::cout << "[ Probably complaining about some insignificant problems ]" << '\n';
-		return ;
-	}
-	while (start < 4) {
-		(this->*funct_ptr[start])();
-		start++;
+	switch (start)
+	{
+	case (0):
+		(this->*funct_ptr[0])();
+		/* fall-through */
+	case (1):
+		(this->*funct_ptr[1])();
+		/* fall-through */
+	case (2):
+		(this->*funct_ptr[2])();
+		/* fall-through */
+	case (3):
+		(this->*funct_ptr[3])();
+		break;
+	
+	default:
+		std::cout << "[ Probably complaining about insignificant problems ]" << '\n';
+		break;
 	}
 }

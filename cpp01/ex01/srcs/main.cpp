@@ -1,7 +1,20 @@
 #include "../includes/Zombie.hpp"
 
+int	ft_atoi(char *str) {
+	int	ret = 0;
+
+	for (int i = 0; (str[i] >= '0' && str[i] <= '9'); i++)
+		ret = (ret * 10) + (str[i] - '0');
+	return (ret);
+}
+
 int main(int argc, char **argv) {
-	int	N = argv[argc - 1][0] - 48;
+	if (argc != 2) {
+		std::cout << "Invalid format : ./zombie_horde <number of zombies>";
+		return (0);
+	}
+
+	int	N = ft_atoi(argv[1]);
 
 	std::cout << "Summoning the horde!" << '\n';
 	Zombie	*horde = zombieHorde(N, "Steve");
@@ -12,5 +25,6 @@ int main(int argc, char **argv) {
 	}
 
 	delete [] horde;
+	// system("leaks zombie_horde");
 	return (0);
 }
