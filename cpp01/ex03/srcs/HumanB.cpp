@@ -4,7 +4,7 @@ HumanB::HumanB(void) {
 	std::cout << "Default HumanB constructor called" << '\n';
 }
 
-HumanB::HumanB(std::string given_name)
+HumanB::HumanB(const std::string &given_name)
 	: _name(given_name), _weapon(0)
 {
 	std::cout << "Overload HumanB constructor called" << '\n';

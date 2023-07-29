@@ -19,7 +19,7 @@ void	searchContact(PhoneBook &phBook, int total_contacts) {
 				<< std::setw(10) << "LAST NAME" << '|'
 				<< std::setw(10) << "NICKNAME" << '\n';
 	
-	for (int i = 0; i < total_contacts; i++)
+	for (int i = 0; (i < total_contacts && i < 8); i++)
 		phBook.getListElem(i).displayRow(i);
 
 	for (int x = total_contacts; x < 8; x++)
@@ -41,6 +41,10 @@ int	main(void) {
 	while (1) {
 		std::cout << "ph_book >";
 		std::getline(std::cin, temp);
+		if (std::cin.eof()) {
+			std::cout << "EOF triggered, program will terminate" << '\n';
+			break ;
+		}
 
 		if (temp.compare("ADD") == 0) {
 			addContact(phBook, total_contacts);

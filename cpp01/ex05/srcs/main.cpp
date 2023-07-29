@@ -6,9 +6,9 @@ int	main(int argc, char **argv) {
 		return (1);
 	}
 
-	Harl	karen;
-	karen.complain(std::string(argv[1]));
+	Harl	harl;
+	harl.complain(std::string(argv[1]));
 	
-	karen.complain("ERROR");
+	harl.complain("ERROR");
 	return (0);
 }

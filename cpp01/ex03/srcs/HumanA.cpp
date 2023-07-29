@@ -1,6 +1,6 @@
 #include "../includes/HumanA.hpp"
 
-HumanA::HumanA(std::string given_name, Weapon& given_weapon)
+HumanA::HumanA(const std::string &given_name, Weapon& given_weapon)
 	: _name(given_name), _weapon(given_weapon)
 {
 	std::cout << "Overload HumanA constructor called" << '\n';

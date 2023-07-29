@@ -11,7 +11,7 @@ ${NAME}	:
 	${CC} ${CC_FLAGS} ${SRCS} -o ${NAME}
 
 clean	:
-	rm ${NAME}
+	rm -rf ${NAME}
 
 fclean	: clean
 

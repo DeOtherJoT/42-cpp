@@ -4,7 +4,7 @@ NAME	= ref_vs_ptr
 
 # COMMAND #
 
-CC		= c++ -Wall -Wextra -Werror -std=c++98 -pedantic
+CC		= c++ -Wall -Wextra -Werror -std=c++98
 
 # SOURCE FILES #
 
