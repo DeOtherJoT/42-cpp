@@ -3,9 +3,9 @@
 /* Constructors and Destructor */
 
 FragTrap::FragTrap(std::string given_name) : ClapTrap(given_name) {
-	this->_hp = 100;
-	this->_ep = 100;
-	this->_attack_dmg = 30;
+	this->_f_hp = 100;
+	this->_f_ep = 100;
+	this->_f_attack_dmg = 30;
 	std::cout << "[Named Constructor] FragTrap unit named " << given_name << " has spawned!" << '\n';
 }
 

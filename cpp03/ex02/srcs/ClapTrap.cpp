@@ -9,8 +9,8 @@ ClapTrap::ClapTrap(std::string given_name)
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src) {
+	std::cout << "[Copy Constructor] ClapTrap unit named " << src.getName() << " has been cloned!" << '\n';
 	*this = src;
-	std::cout << "[Copy Constructor] ClapTrap unit named " << this->_name << " has been cloned!" << '\n';
 }
 
 ClapTrap::~ClapTrap(void) {
@@ -70,6 +70,7 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 	else {
 		std::cout << "ClapTrap " << this->_name << " has been repaired by " << amount << " hit points!" << '\n';
 		this->_hp += amount;
+		this->_ep -= 1;
 		std::cout << "ClapTrap " << this->_name << " now has " << this->_hp << " hit points." << '\n'; 
 	}
 }

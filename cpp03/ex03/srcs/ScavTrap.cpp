@@ -1,10 +1,11 @@
 #include "../includes/ScavTrap.hpp"
 
 /* Constructors and Destructor */
+
 ScavTrap::ScavTrap(std::string given_name) : ClapTrap(given_name) {
-	this->_hp = 100;
-	this->_ep = 50;
-	this->_attack_dmg = 20;
+	this->_s_hp = 100;
+	this->_s_ep = 50;
+	this->_s_attack_dmg = 20;
 	std::cout << "[Named Constructor] ScavTrap unit named " << given_name << " has spawned!" << '\n';
 }
 

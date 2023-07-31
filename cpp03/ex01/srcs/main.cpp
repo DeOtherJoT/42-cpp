@@ -8,13 +8,20 @@ void	printDetails(ScavTrap &obj) {
 }
 
 void	printHeader(std::string header) {
-	std::cout << " =============== " << header << " =============== " << '\n';
+	std::cout << "\n =============== " << header << " =============== \n" << '\n';
 }
 
 int	main(void) {
 	{
-		printHeader("Testing named constructor");
+		printHeader("Testing normal functionality");
 		ScavTrap	n_One("One");
+		printDetails(n_One);
+
+		n_One.attack("Test");
+		printDetails(n_One);
+		n_One.beRepaired(10);
+		printDetails(n_One);
+		n_One.takeDamage(10);
 		printDetails(n_One);
 	}
 	{

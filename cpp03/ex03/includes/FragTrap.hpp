@@ -4,7 +4,12 @@
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
+protected:
+	int	_f_hp;
+	int	_f_ep;
+	int	_f_attack_dmg;
+
 public:
 	FragTrap(std::string given_name);
 	FragTrap(const FragTrap &src);

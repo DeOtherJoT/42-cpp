@@ -19,7 +19,7 @@ ClapTrap::~ClapTrap(void) {
 
 /* Operator Overload */
 ClapTrap	&ClapTrap::operator = (const ClapTrap &a) {
-	std::cout << "Copy assignment operator called" << '\n';
+	std::cout << "ClapTrap copy assignment operator called" << '\n';
 	this->_name = a.getName();
 	this->_hp = a.getHitPoints();
 	this->_ep = a.getEnergyPoints();
@@ -69,7 +69,8 @@ void	ClapTrap::beRepaired(unsigned int amount) {
 	}
 	else {
 		std::cout << "ClapTrap " << this->_name << " has been repaired by " << amount << " hit points!" << '\n';
-		this->_hp += amount;
+		// std::cout << "TEST : " << getHitPoints() << '\n';
+		setHitPoints(getHitPoints() + amount);
 		this->_ep -= 1;
 		std::cout << "ClapTrap " << this->_name << " now has " << this->_hp << " hit points." << '\n'; 
 	}
@@ -96,4 +97,16 @@ int	ClapTrap::getAttackDmg(void) const {
 void	ClapTrap::setName(std::string new_name) {
 	std::cout << "ClapTrap " << this->_name << " is renamed to " << new_name << '\n';
 	this->_name = new_name;
+}
+
+void	ClapTrap::setHitPoints(int new_hp) {
+	this->_hp = new_hp;
+}
+
+void	ClapTrap::setEnergyPoints(int new_ep) {
+	this->_ep = new_ep;
+}
+
+void	ClapTrap::setAttackDmg(int new_attack_dmg) {
+	this->_attack_dmg = new_attack_dmg;
 }

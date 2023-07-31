@@ -1,10 +1,10 @@
 # EXEC #
 
-NAME	= fragtrap
+NAME	= diamondtrap
 
 # COMMANDS #
 
-C++		= c++ -Wall -Wextra -Werror -std=c++98
+C++		= c++ -Wall -Wextra -Werror -Wshadow -std=c++98
 INC		= -Iincludes/
 RM		= rm -rf
 
@@ -14,7 +14,7 @@ SRC_DIR	= srcs/
 
 # SOURCE FILES #
 
-SRCS	= $(addprefix $(SRC_DIR), ClapTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp)
+SRCS	= $(addprefix $(SRC_DIR), ClapTrap.cpp DiamondTrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp)
 OBJS	= $(SRCS:.cpp=.o)
 
 # RECIPES #
