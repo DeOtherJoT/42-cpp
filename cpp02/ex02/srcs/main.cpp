@@ -51,4 +51,15 @@ int main( void ) {
 		std::cout << "a = " << a << '\n';
 		std::cout << "b = " << b << '\n';
 	}
+	std::cout << "\nExtra tests\n" << '\n';
+	{
+		Fixed		a(0);
+		Fixed const	b(1);
+
+		while (a++ < b) {
+			std::cout << a << '\n';
+		}
+		// Fixed const	pop( Fixed(6) / Fixed(0) );
+		// std::cout << "\n\n" << pop << "\n\n" ;
+	}
 }
