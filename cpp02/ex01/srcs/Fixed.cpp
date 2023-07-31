@@ -49,6 +49,7 @@ int	Fixed::toInt(void) const {
 }
 
 std::ostream &operator << (std::ostream &out, const Fixed &a) {
+	// std::cout << "<< Operator overload called" << '\n';
 	out << a.toFloat();
 	return (out);
 }

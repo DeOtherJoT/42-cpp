@@ -19,8 +19,8 @@ int main( void ) {
 	}
 	std::cout << "\nOperation tests\n" << '\n';
 	{
-		Fixed	a(6.90f);
-		Fixed	b(1.052f);
+		Fixed	a(6);
+		Fixed	b(2);
 
 		std::cout << "a + b = " << a + b << '\n';
 		std::cout << "a - b = " << a - b << '\n';
