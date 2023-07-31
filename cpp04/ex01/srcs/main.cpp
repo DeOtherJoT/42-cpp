@@ -37,7 +37,7 @@ int	main(void) {
 	// 			exit(EXIT_FAILURE);
 	// 		}
 	// 		if (copy->getBrain()->getIdea(a).compare("This is an idea") != 0) {
-	// 			std::cout << "Unexpected problem in Cat's brain at index " << a << '\n';
+	// 			std::cout << "Unexpected problem in Dog's brain at index " << a << '\n';
 	// 			exit(EXIT_FAILURE);
 	// 		}
 	// 	}
@@ -63,25 +63,25 @@ int	main(void) {
 
 	// 	system("leaks catdog");
 	// }
-	{
-		printHeader("Testing according to the PDF");
-		Animal	*animals[6];
+	// {
+	// 	printHeader("Testing according to the PDF");
+	// 	Animal	*animals[6];
 
-		for (int i = 0; i < 6; i++) {
-			if (i < 3) 
-				animals[i] = new Dog() ;
-			else 
-				animals[i] = new Cat() ;
-		}
+	// 	for (int i = 0; i < 6; i++) {
+	// 		if (i < 3) 
+	// 			animals[i] = new Dog() ;
+	// 		else 
+	// 			animals[i] = new Cat() ;
+	// 	}
 
-		for (int x = 0; x < 6; x++)
-			std::cout << "animals[" << x << "] = " << animals[x]->getType() << '\n';
+	// 	for (int x = 0; x < 6; x++)
+	// 		std::cout << "animals[" << x << "] = " << animals[x]->getType() << '\n';
 
-		for (int y = 0; y < 6; y++)
-			delete animals[y];
+	// 	for (int y = 0; y < 6; y++)
+	// 		delete animals[y];
 
-		system("leaks catdog");
-	}
+	// 	system("leaks catdog");
+	// }
 	// {
 	// 	printHeader("Proof of a deep copy");
 	// 	Cat	*ori = new Cat();
@@ -121,5 +121,6 @@ int	main(void) {
 
 	// 	system("leaks catdog");
 	// }
+
 	return (0);
 }
