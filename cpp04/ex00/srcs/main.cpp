@@ -1,7 +1,7 @@
 #include "../includes/main.hpp"
 
 void	printHeader(std::string header) {
-	std::cout << " ================= " << header << " ================= " << '\n';
+	std::cout << "\n ================= " << header << " ================= \n" << '\n';
 }
 
 int	main(void) {
