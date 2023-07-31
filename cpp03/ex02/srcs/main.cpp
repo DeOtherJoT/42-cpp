@@ -8,14 +8,20 @@ void	printDetails(FragTrap &obj) {
 }
 
 void	printHeader(std::string header) {
-	std::cout << " =============== " << header << " =============== " << '\n';
+	std::cout << "\n =============== " << header << " =============== \n" << '\n';
 }
 
 int	main(void) {
 	{
 		printHeader("Testing named constructor");
 		FragTrap	n_One("One");
-		FragTrap	n_OneTwo("OneTwo");
+		printDetails(n_One);
+
+		n_One.attack("Test");
+		printDetails(n_One);
+		n_One.beRepaired(10);
+		printDetails(n_One);
+		n_One.takeDamage(10);
 		printDetails(n_One);
 	}
 	{

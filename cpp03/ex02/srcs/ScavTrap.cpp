@@ -10,8 +10,8 @@ ScavTrap::ScavTrap(std::string given_name) : ClapTrap(given_name) {
 }
 
 ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src) {
-	*this = src;
 	std::cout << "[Copy Constructor] ScavTrap unit named " << this->_name << " has been cloned!" << '\n';
+	*this = src;
 }
 
 ScavTrap::~ScavTrap(void) {

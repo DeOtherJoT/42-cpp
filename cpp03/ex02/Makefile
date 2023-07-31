@@ -1,6 +1,6 @@
 # EXEC #
 
-NAME	= claptrap
+NAME	= fragtrap
 
 # COMMANDS #
 

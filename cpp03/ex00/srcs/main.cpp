@@ -14,10 +14,27 @@ int	main(void) {
 	/* Testing that everything works */
 
 	n_Original.attack("R2-D2");
-
 	n_R2d2.takeDamage(n_Original.getAttackDmg());
-
 	n_R2d2.beRepaired(10);
+	printDetails(n_R2d2);
+
+	/* Testing energy out */
+
+	for (int i = 0; i < 9; i++) {
+		n_R2d2.attack("Test");
+	}
+	printDetails(n_R2d2);
+	n_R2d2.beRepaired(1);
+	n_R2d2.attack("TEST");
+
+	/* Testing death */
+
+	n_R2d2.takeDamage(20);
+	printDetails(n_R2d2);
+	n_R2d2.attack("Test");
+	n_R2d2.beRepaired(10);
+	n_R2d2.takeDamage(1);
+	printDetails(n_R2d2);
 
 	/* Testing if the data is shallow copied or deep copied */
 

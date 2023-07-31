@@ -10,8 +10,8 @@ FragTrap::FragTrap(std::string given_name) : ClapTrap(given_name) {
 }
 
 FragTrap::FragTrap(const FragTrap &src) : ClapTrap(src) {
-	*this = src;
 	std::cout << "[Copy Constructor] FragTrap unit named " << this->_name << " has been cloned!" << '\n';
+	*this = src;
 }
 
 FragTrap::~FragTrap(void) {
@@ -29,6 +29,20 @@ FragTrap	&FragTrap::operator = (const FragTrap &a) {
 }
 
 /* Member Functions */
+void	FragTrap::attack(const std::string &target) {
+	if (this->_hp == 0) {
+		std::cout << "FragTrap " << this->_name << " is already dead!" << '\n';
+		return ;
+	}
+	if (this->_ep == 0) {
+		std::cout << "FragTrap " << this->_name << " has no more energy left!" << '\n';
+	}
+	else {
+		this->_ep -= 1;
+		std::cout << "FragTrap " << this->_name << " attacks " << target << ", causing " << this->_attack_dmg << " points of damage!" << '\n';
+	}
+}
+
 void	FragTrap::highFivesGuys(void) {
 	std::cout << "FragTrap " << this->_name << " requests for a high five." << '\n';
 }
